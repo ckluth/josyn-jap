@@ -9,9 +9,9 @@ gemeinsame Bibliotheken und ausführbare Prozesse des JOSYN-Systems.
 
 | Komponente | Typ | Rolle | Abhängigkeiten |
 |---|---|---|---|
-| [`JOSYN.Jap.Shared.Contract`](josyn-jap-shared/) | NuGet | Applikationsvertrag (JAP) zwischen JobHost und JAPServer | ResultPattern |
-| [`JOSYN.Jap.Shared.Log`](josyn-jap-shared/) | NuGet | Prozess-lokaler Datei-Logger für alle JOSYN-EXE-Prozesse | ResultPattern |
-| [`JOSYN.Jap.JAPServer`](josyn-jap-japserver/) | Exe | Backend-Prozess — empfängt JAP-Anfragen via JIP, führt Jobs aus | JIP, PropertyBag, ResultPattern, Shared.Contract, Shared.Log |
+| [`JOSYN.Jap.Shared.Contract`](josyn-jap-shared/README.md) | NuGet | Applikationsvertrag (JAP) zwischen JobHost und JAPServer | ResultPattern |
+| [`JOSYN.Jap.Shared.Log`](josyn-jap-shared/README.md) | NuGet | Prozess-lokaler Datei-Logger für alle JOSYN-EXE-Prozesse | ResultPattern |
+| [`JOSYN.Jap.JAPServer`](josyn-jap-japserver/README.md) | Exe | Backend-Prozess — empfängt JAP-Anfragen via JIP, führt Jobs aus | JIP, PropertyBag, ResultPattern, Shared.Contract, Shared.Log |
 
 ### Abhängigkeitskette
 

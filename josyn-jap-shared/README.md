@@ -10,8 +10,8 @@ Systemschicht — als eigenständige NuGet-Pakete, die von beiden EXE-Prozessen
 
 | Paket | Rolle | Abhängigkeiten |
 |---|---|---|
-| [`JOSYN.Jap.Shared.Contract`](JOSYN.Jap.Shared.Contract/) | Applikationsvertrag (JAP) zwischen JobHost und JAPServer | ResultPattern |
-| [`JOSYN.Jap.Shared.Log`](JOSYN.Jap.Shared.Log/) | Prozess-lokaler Datei-Logger für alle JOSYN-EXE-Prozesse | ResultPattern |
+| [`JOSYN.Jap.Shared.Contract`](JOSYN.Jap.Shared.Contract/README.md) | Applikationsvertrag (JAP) zwischen JobHost und JAPServer | ResultPattern |
+| [`JOSYN.Jap.Shared.Log`](JOSYN.Jap.Shared.Log/README.md) | Prozess-lokaler Datei-Logger für alle JOSYN-EXE-Prozesse | ResultPattern |
 
 ### Abhängigkeitskette
 
