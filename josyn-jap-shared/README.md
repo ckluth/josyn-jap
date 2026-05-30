@@ -39,7 +39,7 @@ Shared.Contract    Shared.Log
 
 ```
 1. josyn-foundation\josyn-foundation-result-pattern\  → pack
-2. josyn-system\josyn-jap-shared\                  → pack
+2. josyn-jap\josyn-jap-shared\                     → pack
 ```
 
 ---

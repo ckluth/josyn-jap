@@ -1,6 +1,6 @@
-# josyn-system
+# josyn-jap
 
-**josyn-system** enthält die Systemschicht von **JOSYN** (*JobSystem Next*) —
+**josyn-jap** enthält die Systemschicht von **JOSYN** (*JobSystem Next*) —
 gemeinsame Bibliotheken und ausführbare Prozesse des JOSYN-Systems.
 
 ---
