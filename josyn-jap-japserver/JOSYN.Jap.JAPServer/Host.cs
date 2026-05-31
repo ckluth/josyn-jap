@@ -1,5 +1,4 @@
 using JOSYN.Foundation.JIP;
-using JOSYN.Foundation.ResultPattern;
 using JOSYN.Jap.Shared.Contract;
 using JOSYN.Jap.Shared.Log;
 using System.Diagnostics;
@@ -53,10 +52,18 @@ internal static class Host
         Console.WriteLine("Starting Server...");
         var sw = Stopwatch.StartNew();
 
+        var dispatcherResult = new JipDispatcher().RegisterAll<IJosynApplicationProtocol>(_japServer);
+        if (!dispatcherResult.Succeeded)
+        {
+            LocalLog.WriteError(dispatcherResult.ToResult());
+            return 1;
+        }
+        var jipDispatcher = dispatcherResult.Value;
+
         var serverStartArguments = new ServerStartArguments
         {
             ConnectionTimeout    = TimeSpan.FromDays(1),
-            HandleStringRequest  = HandleRequest,
+            HandleStringRequest  = requestStr => HandleRequest(jipDispatcher, requestStr),
             SessionKey           = sessionKey,
             HandleErrorNotification = HandleHandlerError,
             IsCancellationRequested = WasEscapePressed,
@@ -94,13 +101,10 @@ internal static class Host
 
     private static readonly JAPServer _japServer = new();
 
-    private static readonly IJipDispatcher _jipDispatcher =
-        new JipDispatcher().RegisterAll<IJosynApplicationProtocol>(_japServer);
-
-    private static async Task<string> HandleRequest(string requestStr)
+    private static async Task<string> HandleRequest(IJipDispatcher dispatcher, string requestStr)
     {
         Console.WriteLine($"SRV|RECEIVED> {requestStr}");
-        var responseStr = await _jipDispatcher.Dispatch(requestStr);
+        var responseStr = await dispatcher.Dispatch(requestStr);
         Console.WriteLine($"SRV|SENDING>  {responseStr}");
         return responseStr;
     }
