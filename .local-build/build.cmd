@@ -21,9 +21,6 @@ set "ROOT=%~dp0.."
 call :run_build "josyn-jap-shared"
 if %ERRORLEVEL% neq 0 exit /b %ERRORLEVEL%
 
-call :run_build "josyn-jap-japserver"
-if %ERRORLEVEL% neq 0 exit /b %ERRORLEVEL%
-
 echo.
 echo [OK] Alle Sub-Repos erfolgreich gebaut (%CONFIGURATION%).
 exit /b 0

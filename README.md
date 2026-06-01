@@ -1,7 +1,10 @@
 # josyn-jap
 
-**josyn-jap** enthält die Systemschicht von **JOSYN** (*JobSystem Next*) —
-gemeinsame Bibliotheken und ausführbare Prozesse des JOSYN-Systems.
+**josyn-jap** enthält die Protokoll-Verträge der **JOSYN** (*JobSystem Next*)
+Systemschicht — die gemeinsamen NuGet-Pakete, auf die sich beide JAP-Parteien stützen.
+
+> `JOSYN.Jap.JAPServer` (die EXE) wurde gemäss ADR-004 nach `josyn-backend` verschoben.
+> Die Protokollverträge (`Contract`, `Log`) verbleiben hier als einzige Quelle der Wahrheit.
 
 ---
 
@@ -11,17 +14,16 @@ gemeinsame Bibliotheken und ausführbare Prozesse des JOSYN-Systems.
 |---|---|---|---|
 | [`JOSYN.Jap.Shared.Contract`](josyn-jap-shared/README.md) | NuGet | Applikationsvertrag (JAP) zwischen JobHost und JAPServer | ResultPattern |
 | [`JOSYN.Jap.Shared.Log`](josyn-jap-shared/README.md) | NuGet | Prozess-lokaler Datei-Logger für alle JOSYN-EXE-Prozesse | ResultPattern |
-| [`JOSYN.Jap.JAPServer`](josyn-jap-japserver/README.md) | Exe | Backend-Prozess — empfängt JAP-Anfragen via JIP, führt Jobs aus | JIP, PropertyBag, ResultPattern, Shared.Contract, Shared.Log |
 
 ### Abhängigkeitskette
 
 ```
 JOSYN.Foundation.ResultPattern
-        ↑           ↑          ↑
-Shared.Contract  Shared.Log  JIP / PropertyBag
-        ↑           ↑          ↑
-              JAPServer (Exe)
+        ↑                ↑
+Shared.Contract    Shared.Log
 ```
+
+`Contract` und `Log` kennen sich gegenseitig nicht.
 
 ---
 
@@ -55,7 +57,6 @@ Reifer PoC — Milestone 1. Die Pakete sind intern produktionsreif;
 die `preview`-Kennzeichnung spiegelt den noch offenen Abnahme-Prozess wider.
 Bekannte PoC-Einschränkungen:
 - [`josyn-jap-shared/POC-HACKS.md`](josyn-jap-shared/POC-HACKS.md)
-- [`josyn-jap-japserver/POC-HACKS.md`](josyn-jap-japserver/POC-HACKS.md)
 
 ---
 
