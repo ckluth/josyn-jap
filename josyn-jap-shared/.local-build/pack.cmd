@@ -8,12 +8,6 @@ if %ERRORLEVEL% neq 0 (
     exit /b %ERRORLEVEL%
 )
 
-dotnet pack JOSYN.Jap.Shared.Log --output "..\..\local-packages"
-if %ERRORLEVEL% neq 0 (
-    echo [FEHLER] Pack JOSYN.Jap.Shared.Log fehlgeschlagen.
-    exit /b %ERRORLEVEL%
-)
-
 echo.
-echo [OK] Beide Pakete erfolgreich gepackt.
+echo [OK] Paket erfolgreich gepackt.
 REM pause
