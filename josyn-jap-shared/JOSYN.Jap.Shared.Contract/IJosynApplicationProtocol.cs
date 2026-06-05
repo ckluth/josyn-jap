@@ -44,4 +44,10 @@ public interface IJosynApplicationProtocol
     /// </summary>
     /// <param name="serializedError">A <see cref="ErrorReport"/> serialized via PropertyBag.</param>
     Task<Result> PutError(string serializedError);
+
+    /// <summary>
+    /// Retrieves the current environment in which the application is running.
+    /// </summary>
+    /// <returns></returns>
+    Task<Result<RuntimeEnvironment>> GetEnvironment();
 }
