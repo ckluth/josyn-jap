@@ -55,9 +55,6 @@ Oder über die Root-Skripte (alle Sub-Repos auf einmal):
 
 Reifer PoC — Milestone 1. Die Pakete sind intern produktionsreif;
 die `preview`-Kennzeichnung spiegelt den noch offenen Abnahme-Prozess wider.
-Bekannte PoC-Einschränkungen:
-- [`josyn-jap-shared/POC-HACKS.md`](josyn-jap-shared/POC-HACKS.md)
-
 ---
 
 *JOSYN System — © 2026 HAEVG AG — MIT License*

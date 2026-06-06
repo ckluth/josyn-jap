@@ -48,8 +48,6 @@ Shared.Contract    Shared.Log
 
 Reifer PoC — Milestone 1. Die Pakete sind intern produktionsreif;
 die `preview`-Kennzeichnung spiegelt den noch offenen Abnahme-Prozess wider.
-Bekannte PoC-Einschränkungen sind in [`POC-HACKS.md`](POC-HACKS.md) dokumentiert.
-
 ---
 
 *JOSYN.Jap.Shared — © 2026 HAEVG AG — MIT License*
