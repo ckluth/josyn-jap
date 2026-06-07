@@ -1,60 +1,59 @@
 # josyn-jap
 
-**josyn-jap** enthält die Protokoll-Verträge der **JOSYN** (*JobSystem Next*)
-Systemschicht — die gemeinsamen NuGet-Pakete, auf die sich beide JAP-Parteien stützen.
+**josyn-jap** contains the protocol contracts of the **JOSYN** (*JobSystem Next*)
+system layer — the shared NuGet packages that both JAP parties depend on.
 
-> `JOSYN.Jap.JAPServer` (die EXE) wurde gemäss ADR-004 nach `josyn-backend` verschoben.
-> Die Protokollverträge (`Contract`, `Log`) verbleiben hier als einzige Quelle der Wahrheit.
+> `JOSYN.Jap.JAPServer` (the EXE) was relocated to `josyn-backend` per ADR-004.
+> The protocol contract (`Contract`) remains here as the single source of truth.
+> `JOSYN.Jap.Shared.Log` was relocated to `JOSYN.Commons.Log` per ADR-008.
 
 ---
 
-## Bausteine
+## Building blocks
 
-| Komponente | Typ | Rolle | Abhängigkeiten |
+| Component | Type | Role | Dependencies |
 |---|---|---|---|
-| [`JOSYN.Jap.Shared.Contract`](josyn-jap-shared/README.md) | NuGet | Applikationsvertrag (JAP) zwischen JobHost und JAPServer | ResultPattern |
-| [`JOSYN.Jap.Shared.Log`](josyn-jap-shared/README.md) | NuGet | Prozess-lokaler Datei-Logger für alle JOSYN-EXE-Prozesse | ResultPattern |
+| [`JOSYN.Jap.Shared.Contract`](josyn-jap-shared/README.md) | NuGet | Application contract (JAP) between JobHost and JAPServer | ResultPattern |
 
-### Abhängigkeitskette
+### Dependency chain
 
 ```
 JOSYN.Foundation.ResultPattern
-        ↑                ↑
-Shared.Contract    Shared.Log
+        ↑
+Shared.Contract
 ```
-
-`Contract` und `Log` kennen sich gegenseitig nicht.
 
 ---
 
-## Lokales Arbeiten
+## Local development
 
-Jedes Sub-Repo ist autark. Aus dem jeweiligen Verzeichnis:
-
-```
-.local-build\build.cmd      # Release-Build
-.local-build\test.cmd       # Tests ausführen
-.local-build\pack.cmd       # NuGet-Pakete → ..\..\local-packages\
-```
-
-Oder über die Root-Skripte (alle Sub-Repos auf einmal):
+Each sub-repo is self-contained. From the respective directory:
 
 ```
-.local-build\build.cmd      # Release-Build (alle Sub-Repos)
-.local-build\test.cmd       # Tests (alle Sub-Repos)
-.local-build\pack.cmd       # NuGet-Pakete (alle Sub-Repos)
-.local-build\all.cmd        # Clean → Build → Test → Pack
+.local-build\build.cmd      # release build
+.local-build\test.cmd       # run tests
+.local-build\pack.cmd       # NuGet packages → ..\..\local-packages\
 ```
 
-**Voraussetzung:** `josyn-foundation-result-pattern` muss zuerst gepackt sein
-(liegt in `..\..\local-packages\`).
+Or via the root scripts (all sub-repos at once):
+
+```
+.local-build\build.cmd      # release build (all sub-repos)
+.local-build\test.cmd       # tests (all sub-repos)
+.local-build\pack.cmd       # NuGet packages (all sub-repos)
+.local-build\all.cmd        # clean → build → test → pack
+```
+
+**Prerequisite:** `josyn-foundation-result-pattern` must be packed first
+(located in `..\..\local-packages\`).
 
 ---
 
 ## Status
 
-Reifer PoC — Milestone 1. Die Pakete sind intern produktionsreif;
-die `preview`-Kennzeichnung spiegelt den noch offenen Abnahme-Prozess wider.
+Milestone 1. Packages are internally production-ready;
+the `preview` label reflects the pending release process.
+
 ---
 
 *JOSYN System — © 2026 HAEVG AG — MIT License*

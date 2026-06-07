@@ -1,53 +1,52 @@
 # JOSYN.Jap.Shared
 
-**JOSYN.Jap.Shared** enthält die gemeinsamen Bibliotheken der **JOSYN** (*JobSystem Next*)
-Systemschicht — als eigenständige NuGet-Pakete, die von beiden EXE-Prozessen
-(`JobHost` und `JAPServer`) genutzt werden.
+**JOSYN.Jap.Shared** contains the shared libraries of the **JOSYN** (*JobSystem Next*)
+system layer — as an independent NuGet package used by both EXE processes
+(`JobHost` and `JAPServer`).
 
 ---
 
-## Pakete
+## Packages
 
-| Paket | Rolle | Abhängigkeiten |
+| Package | Role | Dependencies |
 |---|---|---|
-| [`JOSYN.Jap.Shared.Contract`](JOSYN.Jap.Shared.Contract/README.md) | Applikationsvertrag (JAP) zwischen JobHost und JAPServer | ResultPattern |
-| [`JOSYN.Jap.Shared.Log`](JOSYN.Jap.Shared.Log/README.md) | Prozess-lokaler Datei-Logger für alle JOSYN-EXE-Prozesse | ResultPattern |
+| [`JOSYN.Jap.Shared.Contract`](JOSYN.Jap.Shared.Contract/README.md) | Application contract (JAP) between JobHost and JAPServer | ResultPattern |
 
-### Abhängigkeitskette
+> `JOSYN.Jap.Shared.Log` was relocated to `JOSYN.Commons.Log` per ADR-008.
+
+### Dependency chain
 
 ```
 JOSYN.Foundation.ResultPattern
-        ↑                ↑
-JOSYN.Jap.        JOSYN.Jap.
-Shared.Contract    Shared.Log
+        ↑
+JOSYN.Jap.Shared.Contract
 ```
-
-`Contract` und `Log` kennen sich gegenseitig nicht.
 
 ---
 
-## Lokales Arbeiten
+## Local development
 
 ```
-.local-build\build.cmd          # Release-Build
-.local-build\build.cmd Debug    # Debug-Build
-.local-build\test.cmd           # Tests ausführen
-.local-build\pack.cmd           # NuGet-Pakete → ..\..\local-packages\
+.local-build\build.cmd          # release build
+.local-build\build.cmd Debug    # debug build
+.local-build\test.cmd           # run tests
+.local-build\pack.cmd           # NuGet packages → ..\..\local-packages\
 ```
 
-**Reihenfolge beim ersten Setup** (wegen Abhängigkeit auf ResultPattern):
+**First-time setup order** (due to dependency on ResultPattern):
 
 ```
 1. josyn-foundation\josyn-foundation-result-pattern\  → pack
-2. josyn-jap\josyn-jap-shared\                     → pack
+2. josyn-jap\josyn-jap-shared\                        → pack
 ```
 
 ---
 
 ## Status
 
-Reifer PoC — Milestone 1. Die Pakete sind intern produktionsreif;
-die `preview`-Kennzeichnung spiegelt den noch offenen Abnahme-Prozess wider.
+Milestone 1. Package is internally production-ready;
+the `preview` label reflects the pending release process.
+
 ---
 
 *JOSYN.Jap.Shared — © 2026 HAEVG AG — MIT License*
