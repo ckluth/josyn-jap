@@ -1,4 +1,4 @@
-namespace JOSYN.Jap.Shared.Contract;
+namespace JOSYN.Jap.Contract;
 
 /// <summary>
 /// Contract definition for a structured error report.

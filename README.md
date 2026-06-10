@@ -13,14 +13,14 @@ system layer — the shared NuGet packages that both JAP parties depend on.
 
 | Component | Type | Role | Dependencies |
 |---|---|---|---|
-| [`JOSYN.Jap.Shared.Contract`](josyn-jap-shared/README.md) | NuGet | Application contract (JAP) between JobHost and JAPServer | ResultPattern |
+| [`JOSYN.Jap.Contract`](josyn-jap-shared/README.md) | NuGet | Application contract (JAP) between JobHost and JAPServer | ResultPattern |
 
 ### Dependency chain
 
 ```
 JOSYN.Foundation.ResultPattern
         ↑
-Shared.Contract
+Contract
 ```
 
 ---

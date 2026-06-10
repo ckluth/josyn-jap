@@ -1,4 +1,4 @@
-namespace JOSYN.Jap.Shared.Contract;
+namespace JOSYN.Jap.Contract;
 
 /// <summary>
 /// Represents the different environments in which the application can run.

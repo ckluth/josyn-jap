@@ -10,7 +10,7 @@ system layer — as an independent NuGet package used by both EXE processes
 
 | Package | Role | Dependencies |
 |---|---|---|
-| [`JOSYN.Jap.Shared.Contract`](JOSYN.Jap.Shared.Contract/README.md) | Application contract (JAP) between JobHost and JAPServer | ResultPattern |
+| [`JOSYN.Jap.Contract`](JOSYN.Jap.Contract/README.md) | Application contract (JAP) between JobHost and JAPServer | ResultPattern |
 
 > `JOSYN.Jap.Shared.Log` was relocated to `JOSYN.Commons.Log` per ADR-008.
 
@@ -19,7 +19,7 @@ system layer — as an independent NuGet package used by both EXE processes
 ```
 JOSYN.Foundation.ResultPattern
         ↑
-JOSYN.Jap.Shared.Contract
+JOSYN.Jap.Contract
 ```
 
 ---

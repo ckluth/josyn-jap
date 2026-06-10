@@ -4,7 +4,7 @@ setlocal
 
 
 set "NUGET_BASE=%USERPROFILE%\.nuget\packages"
-set PACKAGES=josyn.jap.shared.contract
+set PACKAGES=josyn.jap.contract
 
 for %%P in (%PACKAGES%) do (
     if exist "%NUGET_BASE%\%%P" (

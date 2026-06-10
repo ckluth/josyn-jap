@@ -1,6 +1,6 @@
 using JOSYN.Foundation.ResultPattern;
 
-namespace JOSYN.Jap.Shared.Contract;
+namespace JOSYN.Jap.Contract;
 
 /// <summary>
 /// Contract definition for the JOSYN Application Protocol (JAP).

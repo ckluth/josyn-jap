@@ -1,8 +1,8 @@
-# JOSYN.Jap.Shared.Contract
+# JOSYN.Jap.Contract
 
-Part of the **JOSYN** (JobSystem Next) ecosystem — member of the `JOSYN.Jap.Shared` layer.
+Part of the **JOSYN** (JobSystem Next) ecosystem — member of the `JOSYN.Jap` layer.
 
-`JOSYN.Jap.Shared.Contract` definiert den Applikations-Vertrag zwischen den beiden
+`JOSYN.Jap.Contract` definiert den Applikations-Vertrag zwischen den beiden
 JOSYN-Systemkomponenten: dem **JobHost** (Frontend) und dem **JAPServer** (Backend).
 
 Dieser Vertrag ist transportunabhängig — er beschreibt ausschließlich, *was* ausgetauscht
@@ -95,11 +95,11 @@ PutError selbst fehlgeschlagen  →  LocalLog.WriteError(...)              (Fall
 ### Projektstruktur
 
 ```
-JOSYN.Jap.Shared.Contract\
+JOSYN.Jap.Contract\
 ├── IJosynApplicationProtocol.cs    # JAP-Vertrag (3 Methoden)
 └── ErrorReport.cs                  # Fehler-Payload-Record
 ```
 
 ---
 
-*JOSYN.Jap.Shared.Contract — © 2026 HAEVG AG — MIT License*
+*JOSYN.Jap.Contract — © 2026 HAEVG AG — MIT License*

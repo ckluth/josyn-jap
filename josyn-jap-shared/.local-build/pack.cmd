@@ -2,9 +2,9 @@
 CHCP 1252
 cd /d "%~dp0.."
 
-dotnet pack JOSYN.Jap.Shared.Contract --output "..\..\local-packages"
+dotnet pack JOSYN.Jap.Contract --output "..\..\local-packages"
 if %ERRORLEVEL% neq 0 (
-    echo [FEHLER] Pack JOSYN.Jap.Shared.Contract fehlgeschlagen.
+    echo [FEHLER] Pack JOSYN.Jap.Contract fehlgeschlagen.
     exit /b %ERRORLEVEL%
 )
 

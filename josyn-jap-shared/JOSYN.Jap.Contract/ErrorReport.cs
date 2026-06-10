@@ -1,4 +1,4 @@
-namespace JOSYN.Jap.Shared.Contract;
+namespace JOSYN.Jap.Contract;
 
 /// <inheritdoc cref="IErrorReport"/>
 public sealed record ErrorReport(
